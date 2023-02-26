@@ -46,48 +46,47 @@ CREATE TABLE Funcionário (
 );
 
 -- inserção de dados
+INSERT INTO Cemitério (nome, endereço) VALUES
+('Cemitério Municipal de São Paulo', 'Av. Professor Lineu Prestes, 3327 - Cidade Universitária, São Paulo - SP'),
+('Cemitério da Consolação', 'Rua da Consolação, 1660 - Consolação, São Paulo - SP'),
+('Cemitério Gethsêmani', 'Rua São João Batista, 1020 - Vila Sofia, São Paulo - SP'),
+('Cemitério São Paulo', 'Rua Cardeal Arcoverde, 1266 - Pinheiros, São Paulo - SP'),
+('Cemitério do Araçá', 'Av. Dr. Arnaldo, 666 - Pacaembu, São Paulo - SP');
 
--- Inserções na tabela Cemitério
-INSERT IGNORE INTO Cemitério (nome, endereço) VALUES
-('Cemitério Municipal de São Paulo', 'Rua Conselheiro Brotero, 903 - Barra Funda, São Paulo - SP, 01154-001'),
-('Cemitério da Vila Formosa', 'Rua Itapeti, 524 - Vila Formosa, São Paulo - SP, 03350-000'),
-('Cemitério São Pedro', 'Rua Francisco Falconi, 837 - Itaquera, São Paulo - SP, 08210-580'),
-('Cemitério do Araçá', 'Avenida Dr. Arnaldo, 666 - Pacaembu, São Paulo - SP, 01246-000'),
-('Cemitério do Morumbi', 'Rua Deputado Laércio Corte, 468 - Morumbi, São Paulo - SP, 05690-080');
+-- Inserção na tabela Família
+INSERT INTO Família (sobrenome, cemitério_id) VALUES
+('Silva', 1),
+('Santos', 2),
+('Almeida', 3),
+('Pereira', 4),
+('Souza', 5);
 
-
--- Inserções na tabela Família
-INSERT IGNORE INTO Família (sobrenome, cemitério_id) VALUES
-('Ferreira', 1),
-('Azevedo', 2),
-('Gomes', 3),
-('Gonçalves', 4),
-('Souza', 5),
-('Castro', 1),
-('Silva', 3),
-('Alves', 4);
-
-
--- Inserções na tabela Túmulo
-INSERT IGNORE INTO Túmulo (número, família_id) VALUES
+-- Inserção na tabela Túmulo
+INSERT INTO Túmulo (número, família_id) VALUES
 ('001', 1),
 ('002', 2),
 ('003', 3),
 ('004', 4),
 ('005', 5),
-('006', 6),
-('007', 7),
-('008', 8);
+('006', 1),
+('007', 2),
+('008', 3),
+('009', 4),
+('010', 5);
 
+-- Inserção na tabela Funcionário
+INSERT INTO Funcionário (nome, cargo, cemitério_id) VALUES
+('João da Silva', 'Jardineiro', 1),
+('Maria Santos', 'Atendente', 2),
+('José Almeida', 'Zelador', 3),
+('Ana Pereira', 'Administrador', 4),
+('Pedro Souza', 'Segurança', 5);
 
--- Inserções na tabela Pessoa
-INSERT IGNORE INTO Pessoa (cpf, nome, data_nascimento, data_morte, cemitério_id, túmulo_id, texto_ob) VALUES
-(98987786447, 'Leila Barbosa Ferreira', '1945-07-23', '2036-03-03', 1, 1, 'É com grande pesar que comunicamos o falecimento de Leila, que partiu deste mundo em 2036-03-03. Seu legado de amor, generosidade e coragem ficará para sempre em nossos corações. '),
-(66032475778, 'Fernanda Azevedo Alves', '1947-01-30', '2036-01-30', 2, 2, 'Com imensa tristeza, lamentamos a partida de Fernanda, que nos deixou em 2036-01-30. Sua ausência será profundamente sentida por todos aqueles que tiveram o privilégio de conhecê-la.'),
-(53584212545, 'Gustavo Gomes Azevedo', '2000-10-26', '2077-03-02', 3, 3, 'Perdemos uma pessoa especial e única com a partida de Gustavo, que nos deixou em 2077-03-02. Seu sorriso, gentileza e sabedoria viverão para sempre em nossas memórias.'),
-(41970038039, 'Kauã Araujo Gonçalves', '1975-03-14', '2039-07-20', 4, 4, 'É com grande tristeza que anunciamos a morte de Kauã, um homem cuja vida foi cheia de aventura e coragem. João era um viajante incansável, um amante da natureza e um amigo leal. Ele será lembrado por sua alegria de viver e sua paixão pela vida.'),
-(46808891877, 'Estevan Barbosa Souza', '1941-11-06', '2029-02-18', 5, 5, 'Hoje nos despedimos de Estevan Barbosa, que nos deixou em 2029-02-18. Sua vida foi um exemplo de coragem, resiliência e bondade, e sua falta será sentida por todos aqueles que a amavam.'),
-(40964000687, 'Thaís Fernandes Castro', '1994-03-30', '2072-02-09', 1, 6, 'É com profundo pesar que comunicamos o falecimento de Thaís, que nos deixou em 2072-02-09. Sua partida deixa um vazio em nossas vidas, mas seu legado de amor e compaixão permanecerá conosco para sempre.')
-
-
-
+-- Inserção na tabela Pessoa
+INSERT INTO Pessoa (cpf, nome, data_nascimento, data_morte, cemitério_id, túmulo_id, texto_ob) VALUES
+('98987786447', 'Leila Barbosa Ferreira', '1945-07-23', '2036-03-03', 1, 1, 'Com grande pesar, comunicamos o falecimento de Leila Barbosa Ferreira, aos 90 anos. Ela deixa um legado de amor, generosidade e bondade, tendo tocado muitas vidas com sua presença. Seu sorriso caloroso e sua sabedoria serão lembrados para sempre. Descanse em paz, querida Leila'),
+('66032475778', 'Fernanda Azevedo Alves', '1947-01-30', '2036-01-30', 2, 2, 'É com profundo pesar que anunciamos o falecimento de Fernanda Azevedo Alves, aos 89 anos. Sua partida deixa um vazio imenso em nossos corações, mas suas memórias permanecerão vivas. Ela foi uma pessoa dedicada e amorosa, que deixou sua marca em todos que a conheceram. Descanse em paz, querida Fernanda.'),
+('53584212545', 'Gustavo Gomes Azevedo', '2000-10-26', '2077-03-02', 3, 3, 'Com grande tristeza, comunicamos o falecimento de Gustavo Gomes Azevedo, aos 76 anos. Ele foi um homem trabalhador e amável, que sempre colocou sua família em primeiro lugar. Sua presença fará muita falta, mas sua lembrança será um conforto para aqueles que o amavam. Descanse em paz, querido Gustavo.'),
+('41970038039', 'Kauã Araujo Gonçalves', '1975-03-14', '2039-07-20', 4, 4, 'Kauã Araujo Gonçalves: "Com muita dor, comunicamos o falecimento de Kauã Araujo Gonçalves, aos 64 anos. Ele foi um marido e pai amoroso, que sempre se dedicou à sua família. Sua partida deixa um vazio imenso em nossos corações, mas suas memórias permanecerão vivas. Descanse em paz, querido Kauã.'),
+('46808891877', 'Estevan Barbosa Souza', '1941-11-06', '2029-02-18', 5, 5, 'Com profunda tristeza, comunicamos o falecimento de Estevan Barbosa Souza, aos 82 anos. Ele foi um homem íntegro e trabalhador, que sempre se preocupou com o bem-estar de sua família. Seu legado de bondade e honestidade será lembrado por aqueles que tiveram a sorte de conhecê-lo. Descanse em paz, querido Estevan'),
+('40964000687', 'Thaís Fernandes Castro', '1994-03-30', '2072-02-09', 1, 6, 'Thaís Fernandes Castro: "Com grande pesar, comunicamos o falecimento de Thaís Fernandes Castro, aos 78 anos. Ela foi uma mulher forte e corajosa, que lutou até o fim contra a doença que a afligia. Sua presença fará muita falta, mas sua lembrança será um conforto para aqueles que a amavam. Descanse em paz, querida Thaís');
