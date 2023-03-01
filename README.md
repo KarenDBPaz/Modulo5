@@ -1,5 +1,5 @@
 # ExperimentoAPIs
- Projeto do Módulo 5, do Squad 5, no qual foi reunido um grupo de 6 pessoas para desenvolver uma API. O tema que escolhemos foi <b>Cemitério</b>
+ Projeto do Módulo 5, do Squad 4, no qual foi reunido um grupo de 6 pessoas para desenvolver uma API. O tema que escolhemos foi <b>Cemitério</b>
 ## ✔️ Técnicas e tecnologias utilizadas
 
 - ``NodeJS``
