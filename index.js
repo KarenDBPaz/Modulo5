@@ -23,10 +23,7 @@ app.use(appRouter);
 
 // Executa o servidor HTTP.
 app.listen(port, () => {
+  console.clear();
   console.log(`Executando servidor em http://localhost:${port}`);
 });
 
-/**
- * By Lara Sharmon 2023
- * MIT Licensed
- */
